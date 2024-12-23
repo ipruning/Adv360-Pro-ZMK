@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
@@ -32,6 +31,14 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
+
+    hyper: hyper {
+      compatible = "zmk,behavior-mod-morph";
+      label = "HYPER";
+      #binding-cells = <0>;
+      bindings = <&kp LC(LS(LA(LGUI)))>, <&none>;
+      mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+    };
   };
 
     keymap {
@@ -43,7 +50,7 @@
  &kp EQUAL     &kp N1    &kp N2    &kp N3     &kp N4  &kp N5                   &tog 1                                                                                           &mo 3  &kp N6    &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
    &kp TAB      &kp Q     &kp W     &kp E      &kp R   &kp T             &kp NUMBER_1                                                                                    &kp NUMBER_3   &kp Y     &kp U      &kp I     &kp O     &kp P   &kp BSLH
    &kp ESC      &kp A     &kp S     &kp D      &kp F   &kp G             &kp NUMBER_2  &kp LEFT_COMMAND  &kp LEFT_ALT                  &kp RIGHT_ALT  &kp RIGHT_COMMAND  &kp NUMBER_4   &kp H     &kp J      &kp K     &kp L  &kp SEMI    &kp SQT
- &kp LSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                                  &kp F24                        &kp F24                                    &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
+ &kp LSHFT      &kp Z     &kp X     &kp C      &kp V   &kp B                                                  &hyper                        &hyper                                    &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
      &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT                    &kp BACKSPACE  &kp LEFT_CONTROL         &mo 2                          &mo 2          &kp ENTER     &kp SPACE          &kp DOWN     &kp UP  &kp LBKT  &kp RBKT      &mo 2
             >;
         };
